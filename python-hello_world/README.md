@@ -5,3 +5,4 @@
 * 4-print_float.py - using f-string print float stored in the variable with a precision of 2 digits
 * 5-print_string.py - print a string stored in variable x3 followed by its first 9 characters
 * 6-concat.py - concat 2 strings and print
+* 7-edges.py - using slicing print different parts of the string
