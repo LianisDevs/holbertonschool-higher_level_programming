@@ -12,3 +12,4 @@
 * 9-print_last_digit.py - prints last digit in a number and returns the value
 * 10-add.py - add 2 numbers together and return the result 
 * 11-pow.py - computes a to the power of b and return the value
+* 12-fizzbuzz.py - prints numbers 1-100 where multiples of specific numbers are replaces with Fizz, Buzz or FizzBuzz
