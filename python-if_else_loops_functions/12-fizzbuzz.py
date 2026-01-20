@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 def fizzbuzz():
     lastNum = 101
     for i in range(1, lastNum):
