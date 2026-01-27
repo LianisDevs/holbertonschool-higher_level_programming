@@ -6,3 +6,4 @@
 * 3- prints all ints of a list in reverse order
 * 4- replaces element in list without modifying origlist
 * 5- removes all "cC" characters from string
+* 6-prints matrix of ints
