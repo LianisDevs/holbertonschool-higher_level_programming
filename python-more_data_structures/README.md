@@ -10,3 +10,4 @@
 * 7- replaces or adds key/value in a dictionary
 * 8- deletes a key in a dictionary
 * 9- returns a new dictionary with all values multiplied by 2
+* 10- returns a key with the biggest integer value
