@@ -9,3 +9,4 @@
 * 6- prints a dictionary by ordered keys
 * 7- replaces or adds key/value in a dictionary
 * 8- deletes a key in a dictionary
+* 9- returns a new dictionary with all values multiplied by 2
