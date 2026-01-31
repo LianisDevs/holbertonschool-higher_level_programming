@@ -8,4 +8,4 @@
 * 5- returns the number of keys in a dictionary
 * 6- prints a dictionary by ordered keys
 * 7- replaces or adds key/value in a dictionary
-
+* 8- deletes a key in a dictionary
