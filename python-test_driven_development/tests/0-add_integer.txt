@@ -35,3 +35,27 @@ Handles a is float:
 Handles a and b float:
 	>>> add_integer(100.3, 100.5)
 	200
+
+Handles Float Overflow:
+	>>> add_integer (float(10**1000), 1)
+	Traceback (most recent call last):
+	...
+	OverflowError: int too large to convert to float
+
+Handles NaN:
+	>>> add_integer(float("nan"), 10)
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
+
+Handles missing 1st parameter:
+	>>> add_integer(, 2)
+	Traceback (most recent call last):
+	...
+	SyntaxError: invalid syntax
+
+Handles no parameters:
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
