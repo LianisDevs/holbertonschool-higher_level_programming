@@ -19,6 +19,9 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     elif not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    if abs(a) == float('inf'):
+    if a == float('inf'):
         raise OverflowError("float is overflowing")
-    return int(a + b)
+    try:
+        return int(a) + int(b)
+    except ValueError:
+        raise ValueError("cannot convert float NaN to integer")

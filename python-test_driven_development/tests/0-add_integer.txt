@@ -37,10 +37,10 @@ Handles a and b float:
 	200
 
 Handles Float Overflow:
-	>>> add_integer(float(10**1000), 1)
+	>>> add_integer(float('inf'), 1)
 	Traceback (most recent call last):
 	...
-	OverflowError: int too large to convert to float
+	OverflowError: float is overflowing
 
 Handles NaN:
 	>>> add_integer(float("nan"), 10)
