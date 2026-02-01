@@ -37,7 +37,7 @@ Handles a and b float:
 	200
 
 Handles Float Overflow:
-	>>> add_integer (float(10**1000), 1)
+	>>> add_integer(float(10**1000), 1)
 	Traceback (most recent call last):
 	...
 	OverflowError: int too large to convert to float
