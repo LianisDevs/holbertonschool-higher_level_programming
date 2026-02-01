@@ -1,0 +1,37 @@
+The ``practice`` module
+======================
+
+Using ``practice_add``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``practice_add`` from the ``practice`` module:
+	>>> practice_add = __import__("practice").practice_add
+
+Now use it:
+    >>> practice_add(6, 2)
+    8
+
+Handles Negative Numbers:
+	>>> practice_add(-100, -98)
+	-198
+
+Handles a is char:
+	>>> practice_add("a", 5)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+Handles b is char:
+	>>> practice_add(65, "b")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+Handles a is float:
+	>>> practice_add(100.3, -2)
+	98
+
+Handles a and b float:
+	>>> practice_add(100.3, 100.5)
+	200
