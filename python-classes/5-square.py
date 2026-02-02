@@ -29,10 +29,13 @@ class Square:
             raise TypeError("size must be an integer")
 
     def area(self):
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
-        for x in range(self.__size):
-            for x in range(self.__size):
-                print("#", end="")
+        if self.size > 0:
+            for x in range(self.size):
+                for y in range(self.size):
+                    print("#", end="")
+                print()
+        else:
             print()
