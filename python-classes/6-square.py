@@ -8,6 +8,7 @@ class Square:
 
     Parameters:
     size: this is the size of the square
+    position: this is the coordinates for printing the square
     """
 
     # called when a new square is made
@@ -34,7 +35,11 @@ class Square:
 
     def my_print(self):
         if self.size > 0:
+            for element_a in range(self.position[1]):
+                print()
             for x in range(self.size):
+                for element_b in range(self.position[0]):
+                    print(" ", end="")
                 for y in range(self.size):
                     print("#", end="")
                 print()
@@ -58,6 +63,6 @@ class Square:
             else:
                 raise TypeError
                 ("position must be a tuple of 2 positive integers")
- 
+
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
