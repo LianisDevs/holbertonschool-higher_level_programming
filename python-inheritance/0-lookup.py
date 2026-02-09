@@ -15,5 +15,5 @@ def lookup(obj):
     list: available attributes and methods of object
 
     """
-    dir_list = [dir(obj)]
+    dir_list = dir(obj)
     return dir_list
