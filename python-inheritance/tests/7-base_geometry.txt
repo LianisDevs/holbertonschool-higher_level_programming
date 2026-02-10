@@ -10,8 +10,40 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 	>>> bg = BaseGeometry()
+
+Handles area():
+	>>> bg = BaseGeometry()
 	>>> try:
 	...		print(bg.area())
 	... except Exception as e:
 	...		print("[{}] {}".format(e.__class__.__name__, e))
 	[Exception] area() is not implemented
+
+Handles integer_validator():
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+
+Handles error for value if string:
+	>>> bg = BaseGeometry()
+	>>> try:
+	...		bg.integer_validator("name", "John")
+	... except Exception as e:
+	...		print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] name must be an integer
+
+Handles error for value if negative:
+	>>> bg = BaseGeometry()
+	>>> try:
+	...		bg.integer_validator("distance", -4)
+	... except Exception as e:
+	...		print("[{}] {}".format(e.__class__.__name__, e))
+	[ValueError] distance must be greater than 0
+
+Handles error for value if zero:
+	>>> bg = BaseGeometry()
+	>>> try:
+	...		bg.integer_validator("age", 0)
+	... except Exception as e:
+	...		print("[{}] {}".format(e.__class__.__name__, e))
+	[ValueError] age must be greater than 0
+
