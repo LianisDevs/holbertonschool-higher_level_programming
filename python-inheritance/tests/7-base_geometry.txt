@@ -96,4 +96,6 @@ Handles error for value if bool:
 	...		bg.integer_validator("age", True)
 	... except Exception as e:
 	...		print("[{}] {}".format(e.__class__.__name__, e))
+	Traceback (most recent call last):
+	...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
