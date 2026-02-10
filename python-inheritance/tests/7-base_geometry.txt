@@ -25,7 +25,7 @@ Handles integer_validator():
 	>>> bg.integer_validator()
 	Traceback (most recent call last):
 	...
-	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 Handles error for value if string:
 	>>> bg = BaseGeometry()
@@ -80,7 +80,7 @@ Handles error for value if no value:
 	>>> bg.integer_validator("age")
 	Traceback (most recent call last):
 	...
-	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 Handles error for value if tuple:
 	>>> bg = BaseGeometry()
