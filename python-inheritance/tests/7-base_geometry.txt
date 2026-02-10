@@ -90,3 +90,10 @@ Handles error for value if tuple:
 	...		print("[{}] {}".format(e.__class__.__name__, e))
 	[TypeError] age must be an integer
 
+Handles error for value if bool:
+	>>> bg = BaseGeometry()
+	>>> try:
+	...		bg.integer_validator("age", True)
+	... except Exception as e:
+	...		print("[{}] {}".format(e.__class__.__name__, e))
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
