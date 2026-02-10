@@ -10,6 +10,7 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
 
 Handles area():
 	>>> bg = BaseGeometry()
