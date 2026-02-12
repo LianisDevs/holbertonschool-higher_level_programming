@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-"""This is the module containing the Shape, Circle and Rectangle class"""
+"""
+This is the module containing the Shape, Circle and Rectangle class
+
+Functions:
+shape_info: duck typing concept
+"""
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
     """
-    This is the Shape class
+    This is the abstract Shape class
 
     Parameters: inherits ABC
     """
