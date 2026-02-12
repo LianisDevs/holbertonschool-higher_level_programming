@@ -63,5 +63,8 @@ class Rectangle(Shape):
 
 
 def shape_info(obj):
-    print("Area: {}".format(obj.area()))
-    print("Perimeter: {}".format(obj.perimeter()))
+    try:
+        print("Area: {}".format(obj.area()))
+        print("Perimeter: {}".format(obj.perimeter()))
+    except Exception:
+        print("Shape info error")
