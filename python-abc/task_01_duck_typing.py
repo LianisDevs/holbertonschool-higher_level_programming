@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""This is the module containing the Shape, Circle and Rectangle class"""
 from abc import ABC, abstractmethod
 import math
 
