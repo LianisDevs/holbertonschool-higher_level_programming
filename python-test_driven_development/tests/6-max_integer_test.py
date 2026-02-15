@@ -34,3 +34,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_string_list(self):
         result = max_integer(["a", "b", "c", "d"])
         assert result == "d"
+
+    def test_list_one_element(self):
+        result = max_integer([1])
+        assert result == 1
