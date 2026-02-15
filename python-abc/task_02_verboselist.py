@@ -1,6 +1,12 @@
-#!/usr/bin/python3
+"""This is the module containing the VerboseList class """
+
 
 class VerboseList(list):
+    """
+    This is the VerboseList class
+
+    Parameters: inherits list
+    """
 
     def append(self, item):
         super().append(item)
