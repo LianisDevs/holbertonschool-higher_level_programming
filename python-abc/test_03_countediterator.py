@@ -36,8 +36,7 @@ class TestCountedIteratorClass():
         result = counted_iterator.__next__()
         assert counted_iterator.get_count() == 2
 
-    def test_counted_iterator_has_stop_iteration_exception(self):
-        with pytest.raises(StopIteration):
+    def test_counted_iterator_has_stop_iteration_exception(self): with pytest.raises(StopIteration):
             counted_iterator = CountedIterator(self.data)
             counted_iterator.__next__()
             counted_iterator.__next__()
