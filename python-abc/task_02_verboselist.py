@@ -18,8 +18,5 @@ class VerboseList(list):
             print("{} not found in the list".format(item))
 
     def pop(self, item=-1):
-        try:
-            print("Popped [{}] from the list".format(self[item]))
-            super().pop(item)
-        except IndexError:
-            print("{} not found in the list".format(item))
+        print("Popped [{}] from the list".format(self[item]))
+        super().pop(item)
