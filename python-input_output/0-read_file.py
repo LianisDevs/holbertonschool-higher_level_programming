@@ -10,8 +10,8 @@ def read_file(filename=""):
 
     Parameters: filename
     """
-    if  not filename:
+    if not filename:
         return
 
     with open(filename, "r") as file:
-        print(file.read())
+        print(file.read(), end="")
