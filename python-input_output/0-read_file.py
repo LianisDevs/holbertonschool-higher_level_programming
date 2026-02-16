@@ -8,5 +8,5 @@ def read_file(filename=""):
     if  not filename:
         return
 
-    file = open(filename, "r")
-    print(file.read())
+    with open(filename, "r") as file:
+        print(file.read())
