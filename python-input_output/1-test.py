@@ -1,3 +1,4 @@
+from os import write
 import pytest
 read_file = __import__('0-read_file').read_file
 write_file = __import__('1-write_file').write_file
@@ -15,8 +16,17 @@ class TestWriteFileClass():
         out, err = capfd.readouterr()
         assert out.split("\n")[-2] == "This is fun!"
 
+    def test_write_file_returns_number_of_chars_written(self):
+        result = write_file(self.test_file, self.new_text)
+        assert result == 13
+
+
     def test_write_file_creates_and_writes_to_new_file(self, capfd):
         write_file("fake_file.txt", self.new_text)
         read_file(self.test_file)
         out, err = capfd.readouterr()
         assert out.split("\n")[-2] == "This is fun!"
+
+    def test_write_file_no_file_given(self):
+        write_file(self.new_text)
+
