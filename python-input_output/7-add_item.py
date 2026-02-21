@@ -1,12 +1,11 @@
 #!/usr/bin/python3
+"""
+This is the module containing the add_item function
+"""
 
 import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-
-"""
-This is the module containing the add_item function
-"""
 
 
 def add_item(file_name):
