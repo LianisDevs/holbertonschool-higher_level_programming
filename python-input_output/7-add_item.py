@@ -8,16 +8,16 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-def add_item(file_name):
+def add_item():
     """
     This is the add_item function
-
-    Parameters: file_name
+    Loads file, reads file, appends to file and then saves file
     """
+
     args = sys.argv
     orig = []
     try:
-        orig = load_from_json_file(file_name)
+        orig = load_from_json_file("add_item.json")
     except FileNotFoundError:
         pass
     finally:
@@ -25,4 +25,8 @@ def add_item(file_name):
         for i in range(1, length):
             orig.append(args[i])
 
-    save_to_json_file(orig, file_name)
+    save_to_json_file(orig, "add_item.json")
+
+
+if __name__ == "__main__":
+    add_item()
