@@ -66,3 +66,7 @@ class CustomObject():
                 return obj
         except FileNotFoundError:
             return None
+        except pickle.UnpicklingError:
+            return None
+        except EOFError:
+            return None

@@ -29,6 +29,11 @@ class TestCustomObjectClass():
         assert loaded_object.age == 25
         assert loaded_object.is_student == True
 
+    def test_custom_object_deserialize_handles_no_file(self):
+        loaded_object = CustomObject.deserialize("NotARealFile.pkl")
+        assert loaded_object == None
+
+
     def test_custom_object_has_display(self, capfd):
         obj = CustomObject(name="John", age=25, is_student=True)
         obj.display()
