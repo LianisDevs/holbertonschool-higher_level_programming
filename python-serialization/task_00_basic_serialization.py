@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the serialize module
+This is the task_00_basic_serialization module
 Containing the serialize_and_save_to_file function
 and load_and_deserialize function
 """
