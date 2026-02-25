@@ -25,14 +25,13 @@ def fetch_and_save_posts():
 
     if posts.status_code == 200:
         posts_obj = posts.json()
-        if posts_obj:
-            fieldnames = posts_obj[0].keys()
-        else:
-            fieldnames = []
+
         try:
             with open("posts.csv", "w", newline='', encoding='utf-8') as file:
-                writer = csv.DictWriter(file, fieldnames=fieldnames)
-                writer.writeheader()
-                writer.writerows(posts_obj)
+                writer = csv.writer(file)
+                writer.writerow(['id', 'title', 'body'])
+                for item in posts_obj:
+                    writer.writerow([item['id'], item['title'], item['body']])
+
         except Exception:
             pass
