@@ -47,7 +47,7 @@ class HTTPWebServer(http.server.BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.end_headers()
-            string = "Endpoint Not Found"
+            string = "Endpoint not found"
             self.wfile.write(string.encode(encoding="utf_8"))
 
 
