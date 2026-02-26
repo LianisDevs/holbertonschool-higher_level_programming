@@ -38,19 +38,11 @@ class HTTPWebServer(http.server.BaseHTTPRequestHandler):
             json_string = json.dumps(python_obj)
             self.wfile.write(json_string.encode(encoding="utf_8"))
 
-        elif self.path == "/info":
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
-            self.end_headers()
-            obj = {"version": "1.0",
-                   "description": "A simple API built with http.server"
-                   }
-            json_string = json.dumps(obj)
-            self.wfile.write(json_string.encode(encoding="utf_8"))
-
         elif self.path == "/status":
             self.send_response(200)
             self.end_headers()
+            string = "OK"
+            self.wfile.write(string.encode(encoding="utf_8"))
 
         else:
             self.send_response(404)
