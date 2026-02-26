@@ -8,7 +8,9 @@ start-server()
 """
 import http.server
 import socketserver
+import time
 import json
+import os
 
 PORT = 8000
 
@@ -24,10 +26,10 @@ class HTTPWebServer(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/":
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            json_string = json.dumps("Hello, this is a simple API!")
-            self.wfile.write(json_string.encode(encoding="utf_8"))
+            string = "Hello, this is a simple API!"
+            self.wfile.write(string.encode(encoding="utf_8"))
+
         elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -46,12 +48,15 @@ class HTTPWebServer(http.server.BaseHTTPRequestHandler):
             json_string = json.dumps(obj)
             self.wfile.write(json_string.encode(encoding="utf_8"))
 
+        elif self.path == "/status":
+            self.send_response(200)
+            self.end_headers()
+
         else:
             self.send_response(404)
-            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            json_string = json.dumps("Endpoint Not Found")
-            self.wfile.write(json_string.encode(encoding="utf_8"))
+            string = "Endpoint Not Found"
+            self.wfile.write(string.encode(encoding="utf_8"))
 
 
 def start_server():
@@ -59,6 +64,8 @@ def start_server():
     This is the start_server() function
     This starts the server
     """
+    os.system('clear')
+    time.sleep(1)
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), HTTPWebServer) as httpd:
         httpd.serve_forever()
