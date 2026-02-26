@@ -5,8 +5,7 @@ from werkzeug.exceptions import BadRequest
 
 app = Flask(__name__)
 
-# change this to empty dictionary before pushing
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+users = {}
 
 
 @app.route("/")
