@@ -3,7 +3,8 @@
 from flask import Flask, json, request, jsonify
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import create_access_token, current_user, get_jwt_identity, jwt_required, JWTManager
+from flask_jwt_extended import create_access_token, \
+    current_user, get_jwt_identity, jwt_required, JWTManager
 
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "icecream"
@@ -11,8 +12,16 @@ app.config['JWT_TOKEN_LOCATION'] = 'headers'
 jwt = JWTManager(app)
 auth = HTTPBasicAuth()
 users = {
-    "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
-    "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
+    "user1": {
+        "username": "user1",
+        "password": generate_password_hash("password"),
+        "role": "user"
+    },
+    "admin1": {
+        "username": "admin1",
+        "password": generate_password_hash("password"),
+        "role": "admin"
+    }
 }
 
 
@@ -49,10 +58,8 @@ def login():
 @jwt_required()
 def jwt_protected():
     current_user = get_jwt_identity()
-    response = {
-        "message": "JWT Auth: Access Granted"
-    }
-    return jsonify(response) , 200
+    response = "JWT Auth: Access Granted"
+    return response, 200
 
 
 @app.route("/admin-only")
@@ -63,12 +70,10 @@ def admin_access():
     # gets the full user obj
     user = users.get(current_username)
 
-    #check role on user for admin
+    # check role on user for admin
     if user and user["role"] == "admin":
-        response = {
-            "message": "Admin Access: Granted"
-        }
-        return jsonify(response), 200
+        response = "Admin Access: Granted"
+        return response, 200
 
     response = {
         "error":  "Admin access required"
