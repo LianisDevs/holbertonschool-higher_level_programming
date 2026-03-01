@@ -1,4 +1,6 @@
 --- creates a table in current database
+SELECT DATABASE() AS db_in_use;
+
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256),
