@@ -5,11 +5,8 @@ CREATE TABLE IF NOT EXISTS second_table (
 	score INT
 );
 
-
-DELETE FROM second_table;
-
 -- inserts multiple records into table
-INSERT IGNORE INTO second_table (id, name, score) VALUES
+INSERT INTO second_table (id, name, score) VALUES
 (1, "John", 10),
 (2, "Alex", 3),
 (3, "Bob", 14),
