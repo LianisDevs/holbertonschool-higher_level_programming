@@ -1,14 +1,12 @@
 --- creates a table in current database
-SELECT DATABASE() AS db_in_use;
-
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256),
 	score INT
 );
 
-INSERT INTO second_table(id, name, score)
-VALUES
+-- inserts multiple records into table
+INSERT INTO second_table(id, name, score) VALUES
 (1, "John", 10),
 (2, "Alex", 3),
 (3, "Bob", 14),
