@@ -33,4 +33,3 @@ def lists_from_database():
 
 if __name__ == "__main__":
     lists_from_database()
-
