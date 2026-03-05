@@ -1,9 +1,18 @@
 #!/usr/bin/python3
+"""
+This module contains the lists_from_database function
+"""
+
 import sys
 import MySQLdb
 
 
 def lists_from_database():
+    """
+    This function connects to a MySQL db
+    Performs SQL query to select all from table
+    Prints each row from selection
+    """
     my_db = MySQLdb.connect(
         host='127.0.0.1',
         user=sys.argv[1],
@@ -24,3 +33,4 @@ def lists_from_database():
 
 if __name__ == "__main__":
     lists_from_database()
+
