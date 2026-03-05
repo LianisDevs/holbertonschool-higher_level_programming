@@ -18,7 +18,7 @@ def get_user_input_from_database():
         user=sys.argv[1],
         passwd=sys.argv[2],
         database=sys.argv[3],
-        port=3307
+        port=3306
     )
 
     cur = my_db.cursor()
