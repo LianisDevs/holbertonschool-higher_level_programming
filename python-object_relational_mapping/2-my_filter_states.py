@@ -23,12 +23,10 @@ def get_user_input_from_database():
 
     cur = my_db.cursor()
 
-    sql_query = (
+    cur.execute(
         "SELECT * FROM states \
-        WHERE name = %s \
-        ORDER BY id ASC")
-
-    cur.execute(sql_query, (sys.argv[4],))
+        WHERE name = {} \
+        ORDER BY id ASC".format(sys.argv[4]))
 
     query_rows = cur.fetchall()
     for row in query_rows:
