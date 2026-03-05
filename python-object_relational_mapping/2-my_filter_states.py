@@ -24,7 +24,7 @@ def get_user_input_from_database():
     cur = my_db.cursor()
 
     sql_query = "SELECT * FROM states \
-        WHERE name = '{}'".format(sys.argv[4])
+        WHERE name COLLATE utf8mb4_bin  = '{}'".format(sys.argv[4])
 
     cur.execute(sql_query)
 
