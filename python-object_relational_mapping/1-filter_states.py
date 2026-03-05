@@ -23,7 +23,10 @@ def states_N_from_database():
 
     cur = my_db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name COLLATE utf8mb4_bin LIKE 'N%' ORDER BY id ASC")
+    cur.execute(
+        "SELECT * FROM states \
+        WHERE name COLLATE utf8mb4_bin LIKE 'N%' \
+        ORDER BY id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
