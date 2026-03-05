@@ -18,15 +18,15 @@ def get_user_input_from_database():
         user=sys.argv[1],
         passwd=sys.argv[2],
         database=sys.argv[3],
-        port=3306
+        port=3307
     )
 
     cur = my_db.cursor()
 
-    cur.execute(
-        "SELECT * FROM states \
-        WHERE name = {} \
-        ORDER BY id ASC".format(sys.argv[4]))
+    sql_query = "SELECT * FROM states \
+        WHERE name = '{}'".format(sys.argv[4])
+
+    cur.execute(sql_query)
 
     query_rows = cur.fetchall()
     for row in query_rows:
