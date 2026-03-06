@@ -14,4 +14,8 @@ if __name__ == "__main__":
         query = select(State)
 
         i = conn.execute(query).first()
-        print("{}: {}".format(i[0], i[1]))
+        if i is None:
+            print("Nothing")
+
+        else:
+            print("{}: {}".format(i[0], i[1]))
