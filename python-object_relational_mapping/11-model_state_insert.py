@@ -12,9 +12,9 @@ if __name__ == "__main__":
 
     with engine.connect() as conn:
         query = insert(State).values(name="Louisiana")
-
         query.compile()
         i = conn.execute(query)
+        conn.commit()
         if i is None:
             print("Not found")
         else:
