@@ -15,3 +15,4 @@ if __name__ == "__main__":
 
         query.compile()
         i = conn.execute(query)
+        conn.commit()
