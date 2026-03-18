@@ -2,7 +2,7 @@
 const args = process.argv;
 
 if (args[2] === undefined) {
-	console.log('No arument');
+	console.log('No argument');
 } else {
 	let i = 2;
 
