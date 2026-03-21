@@ -3,6 +3,6 @@ const headerElement = document.getElementById('red_header');
 
 const redHeaderElement = document.querySelector('header');
 
-redHeaderElement.addEventListener('click', function(event) {
+redHeaderElement.addEventListener('click', () => {
 	headerElement.style.color = '#FF0000';
 });
