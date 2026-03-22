@@ -24,14 +24,15 @@ def generate_invitations(template, attendees):
         copy_template = template
 
         # Start replacing each value and make sure it is updating as you go
+
         copy_template = copy_template.replace(
-            "{name}", person["name"] or "N/A")
+            "{name}", person.get("name", "N/A"))
         copy_template = copy_template.replace(
-            "{event_title}", person["event_title"] or "N/A")
+            "{event_title}", person.get("event_title", "N/A"))
         copy_template = copy_template.replace(
-            "{event_date}", person["event_date"] or "N/A")
+            "{event_date}", person.get("event_date", "N/A") or "N/A")
         copy_template = copy_template.replace(
-            "{event_location}", person["event_location"] or "N/A")
+            "{event_location}", person.get("event_location", "N/A"))
 
         # Write to a file
         try:
